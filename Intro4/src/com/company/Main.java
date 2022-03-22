@@ -43,5 +43,23 @@ public class Main {
                 System.out.print(student + " ");
             System.out.println();
         }
+
+        MyList<Integer> myIntegersList = new MyList<>(10);
+        myIntegersList.add(1);
+        myIntegersList.add(2);
+        myIntegersList.add(7);
+        myIntegersList.print();
+        System.out.println("Integer 5 is in list " + myIntegersList.lookup(5));
+        System.out.println("Integer 7 is in list " + myIntegersList.lookup(7));
+
+        MyList<Student> myStudentsList = new MyList<>(1);
+
+        for (Student student: students) {
+            myStudentsList.add(student);
+        }
+
+        myStudentsList.print();
+        System.out.println("Student Rebecca is in list " + myStudentsList.lookup(new Student("Rebecca", 9.6)));
+        System.out.println("Student Kiki is in list " + myStudentsList.lookup(new Student("Kiki", 7.0)));
     }
 }
