@@ -59,10 +59,10 @@ public class Product {
 
     public static void insert(Product product) throws SQLException {
         Connection connection = Connect.connectToDatabase();
-        PreparedStatement psw = connection.prepareStatement("SET FOREIGN_KEY_CHECKS=0;");
-        psw.execute();
+//        PreparedStatement psw = connection.prepareStatement("SET FOREIGN_KEY_CHECKS=0;");
+//        psw.execute();
 
-        psw = connection.prepareStatement("INSERT INTO `products` (`code`, `name`, `description`, `stock`, `price`) VALUES (?, ?, ?, ?, ?);");
+        PreparedStatement psw = connection.prepareStatement("INSERT INTO `products` (`code`, `name`, `description`, `stock`, `price`) VALUES (?, ?, ?, ?, ?);");
         psw.setString(1, product.getCode());
         psw.setString(2, product.getName());
         psw.setString(3, product.getDescription());

@@ -70,10 +70,10 @@ public class Order {
 
     public static void insert(Order order) throws SQLException {
         Connection connection = Connect.connectToDatabase();
-        PreparedStatement psw = connection.prepareStatement("SET FOREIGN_KEY_CHECKS=0;");
-        psw.execute();
+//        PreparedStatement psw = connection.prepareStatement("SET FOREIGN_KEY_CHECKS=0;");
+//        psw.execute();
 
-        psw = connection.prepareStatement("INSERT INTO `orders` (`id`, `order_date`, `shipped_date`, `status`, `comments`, `customer_id`) VALUES (?, ?, ?, ?, ?, ?);");
+        PreparedStatement psw = connection.prepareStatement("INSERT INTO `orders` (`id`, `order_date`, `shipped_date`, `status`, `comments`, `customer_id`) VALUES (?, ?, ?, ?, ?, ?);");
         psw.setInt(1, order.getId());
         psw.setDate(2, new java.sql.Date(order.getOrderDate().getTime()));
         psw.setDate(3, new java.sql.Date(order.getShippedDate().getTime()));
