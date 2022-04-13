@@ -58,9 +58,8 @@ public class DemoApplication {
 		System.out.println("Filter users with age > 30, transform their names to uppercase and sort them descending by age");
 		users.stream().filter(user -> user.getAge() > 30)
 				.map(user -> {
-					User newUser = new User(user);
-					newUser.setName(user.getName().toUpperCase(Locale.ROOT));
-					return newUser;
+					user.setName(user.getName().toUpperCase(Locale.ROOT));
+					return user;
 					})
 				.sorted(Comparator.comparing(User::getAge).reversed())
 				.forEach(System.out::println);
