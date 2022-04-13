@@ -11,12 +11,6 @@ public class User {
     private String name;
     private int age;
 
-    public User(User user) {
-        id = user.id;
-        name = user.name;
-        age = user.age;
-    }
-
     private User(int id, String name, int age) {
         this.id = id;
         this.name = name;
